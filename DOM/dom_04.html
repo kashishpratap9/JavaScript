@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black; color: white; padding: 20px;">
+    <ul class ="language">
+        <li>javascript</li>
+    </ul>
+    
+</body>
+<script>
+    function addLanguage(lang){
+        const li= document.createElement('li');
+        li.innerText=`${lang}`
+        document.querySelector('.language').appendChild(li);
+
+    }
+    addLanguage('python');
+    addLanguage('java');
+    addLanguage('c++');
+    function addOptiLanguage(lang){
+        const li= document.createElement('li');
+       li.appendChild(document.createTextNode(lang));
+       document.querySelector('.language').appendChild(li);  
+    }
+    addOptiLanguage('c#');
+
+    //edit the text content of an element
+    const seclang= document.querySelector('li:nth-child(2)');
+    const newli =document.createElement('li');
+    newli.textContent='typescript';
+    seclang.replaceWith(newli);
+
+    const firstlang= document.querySelector("li:first-child");
+    const newli1= document.createElement('li');
+    newli1.textContent='ruby';
+    firstlang.replaceWith(newli1);
+
+    //remove
+    const lastlang= document.querySelector("li:last-child");
+    lastlang.remove();
+
+</script>
+</html>
