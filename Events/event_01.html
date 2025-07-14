@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>htnml Events </title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+    //events invoked on an activity
+    //onclick me features ki availbilty km hoti h
+    //events me  propogation ability hoti h
+
+      const image= document.getElementById('images')
+     image.addEventListener('click',(e)=>{
+        console.log("You clicked on images list");
+        //stop the event from bubbling up 
+        // alert('You clicked on images list');
+
+
+     }, false);
+    const owlId= document.getElementById('owl')
+    owlId.addEventListener('click', (e) => {
+        console.log("You clicked on owl image");
+        // console.log(e);
+        e.stopPropagation(); //stop the event from bubbling up 
+        //browser event, enviorment event
+        //alert('You clicked on owl image');
+    },false); //false means event will not bubble up
+    //event bubbling, event capturing
+    //event bubbling means event will bubble up to the parent element
+    //event capturing means event will be captured by the parent element first
+    //attachEventListener is used to attach an event to an element
+    //type , timestamp, target, defaultPrevented, currentTarget,toElement, srcElemnt, clientX, clientY,  screenX, screenY, keycode, shiftkey, altkey
+
+    const googleLink = document.getElementById('google');
+    googleLink.addEventListener('click', (e) => {
+        console.log("You clicked on google link");
+        e.preventDefault(); //prevent the default action of the link
+        //alert('You clicked on google link');
+    }, false); //false means event will not bubble up
+
+
+    //javascript->synchronous, single threaded
+    //excution context->call stack( excuy=te one line of a code at a time)
+
+    //blocking-code{block the flow of program(read file) } or non-blocking code {do not block exceution ( read file asynchronously) }
+
+
+
+   
+
+
+
+</script>
+</html>
