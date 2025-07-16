@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>kashish pratap</h1>
+    <button id="stop">Stop</button>
+    
+</body>
+<script>
+    setTimeout(()=>{
+        console.log("Hello World");
+
+    }, 2000);
+    const changeText= ()=>{
+        document.querySelector('h1').innerHTML = "Hello World"; }
+
+
+       const changeMe= setTimeout(changeText, 3000);
+       document.querySelector('#stop').addEventListener('click',()=>{
+
+        console.log("stop the timer");
+        clearTimeout(changeMe);
+        // document.querySelector('h1').innerHTML = "Timer Stopped";
+       })
+    
+    //it is mathod calling api's
+
+</script>
+</html>
